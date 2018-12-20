@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: usercenter
+  profiles:
+    active: default
+  cloud:
+    config:
+      uri: http://localhost:8081
+encrypt:
+  key: IMSYMMETRIC

@@ -16,18 +16,21 @@
     <description>Demo project for Spring Boot</description>
 
     <modules>
+        <module>common</module>
         <module>backend</module>
         <module>register</module>
+        <module>confsvr</module>
+        <module>usercenter</module>
     </modules>
 
 
     <properties>
         <maven.version>3.5.0</maven.version>
         <java.version>1.8</java.version>
+        <spring-cloud.version>Greenwich.RC1</spring-cloud.version>
         <mapstruct.version>1.2.0.Final</mapstruct.version>
         <projectlombok.version>1.18.4</projectlombok.version>
         <spring-boot.version>2.1.1.RELEASE</spring-boot.version>
-        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
 
         <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
         <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -39,6 +42,12 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.rockeycui.learn</groupId>
+                <artifactId>common</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
             <!--spring boot-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -83,9 +92,14 @@
 
             <!--第三方-->
             <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>1.1.10</version>
+            </dependency>
+            <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>5.1.47</version>
+                <version>8.0.13</version>
             </dependency>
             <dependency>
                 <groupId>org.mapstruct</groupId>

@@ -7,10 +7,10 @@
         <artifactId>cloud</artifactId>
         <version>1.0.0</version>
     </parent>
-    <artifactId>backend</artifactId>
+    <artifactId>usercenter</artifactId>
     <version>1.0.0</version>
-    <name>backend</name>
-    <description>backend</description>
+    <name>usercenter</name>
+    <description>Demo project for Spring Boot</description>
 
     <dependencies>
         <dependency>
