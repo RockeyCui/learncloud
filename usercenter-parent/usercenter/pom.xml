@@ -3,14 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
+        <artifactId>usercenter-parent</artifactId>
         <groupId>com.rockeycui.learn</groupId>
-        <artifactId>cloud</artifactId>
         <version>1.0.0</version>
     </parent>
-    <artifactId>backend</artifactId>
+    <artifactId>usercenter</artifactId>
     <version>1.0.0</version>
-    <name>backend</name>
-    <description>backend</description>
+    <name>usercenter</name>
 
     <dependencies>
         <dependency>
@@ -74,15 +73,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.rocketmq</groupId>
-            <artifactId>rocketmq-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.rocketmq</groupId>
-            <artifactId>rocketmq-common</artifactId>
         </dependency>
     </dependencies>
 

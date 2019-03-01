@@ -1,0 +1,23 @@
+server:
+  port: 8080
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+zuul:
+  routes:
+    #自定义路由 backend 路径变为 bg
+    backend: bg/**
+  prefix: /api
+#超时时间
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2500

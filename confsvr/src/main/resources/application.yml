@@ -6,6 +6,7 @@ spring:
     config:
       server:
         git:
+          basedir: config-repo/tmp
           uri: https://github.com/RockeyCui/config/
           searchPaths: backend,usercenter
           username:
