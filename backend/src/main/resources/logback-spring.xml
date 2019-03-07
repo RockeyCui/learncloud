@@ -16,8 +16,18 @@
             <maxHistory>30</maxHistory>
         </rollingPolicy>
         <encoder>
-            <charset>utf-8</charset>
-            <Pattern>%blue(%d) %highlight(%-5level) [%thread] [%X{ReqUID}] %cyan(%logger): %msg%n</Pattern>
+            <charset>UTF-8</charset>
+            <Pattern>%blue(%d) %highlight(%-5level) [%thread] [%X{log-track-id}] %cyan(%logger): %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>Debug</level>
+        </filter>
+        <encoder>
+            <charset>UTF-8</charset>
+            <Pattern>%blue(%d) %highlight(%-5level) [%thread] [%X{log-track-id}] %cyan(%logger): %msg%n</Pattern>
         </encoder>
     </appender>
 

@@ -1,10 +1,8 @@
 package com.rockeycui.learn.gateway.filters;
 
 import com.netflix.zuul.ZuulFilter;
-import com.netflix.zuul.context.RequestContext;
-import com.netflix.zuul.exception.ZuulException;
+import com.rockeycui.learn.common.bean.GatewayConstant;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -17,18 +15,11 @@ public class TrackingFilter extends ZuulFilter {
     private static final int FILTER_ORDER = 1;
     private static final boolean SHOULD_FILTER = true;
 
-    private final FilterUtil filterUtil;
-
-    @Autowired
-    public TrackingFilter(FilterUtil filterUtil) {
-        this.filterUtil = filterUtil;
-    }
-
-
     @Override
     public String filterType() {
         //告诉 Zuul 过滤器是一个前置，路由或后置过滤器。
-        return FilterUtil.PRE_FILTER_TYPE;
+        // pre
+        return GatewayConstant.PRE_FILTER_TYPE;
     }
 
     @Override
@@ -44,24 +35,13 @@ public class TrackingFilter extends ZuulFilter {
     }
 
     @Override
-    public Object run() throws ZuulException {
-        if (isCorrelationIdPresent()) {
-            log.debug("tmx-correlation-id found in tracking filter: {}.", filterUtil.getCorrelationId());
+    public Object run() {
+        if (FilterUtil.getLogTrackId() != null) {
+            log.debug("发现日志关联 id : {}.", FilterUtil.getLogTrackId());
         } else {
-            filterUtil.setCorrelationId(generateCorrelationId());
-            log.debug("tmx-correlation-id generated in tracking filter: {}.", filterUtil.getCorrelationId());
+            FilterUtil.setLogTrackId(java.util.UUID.randomUUID().toString());
+            log.debug("生成日志关联 id : {}.", FilterUtil.getLogTrackId());
         }
-        RequestContext ctx = RequestContext.getCurrentContext();
-
         return null;
-    }
-
-
-    private String generateCorrelationId() {
-        return java.util.UUID.randomUUID().toString();
-    }
-
-    private boolean isCorrelationIdPresent() {
-        return filterUtil.getCorrelationId() != null;
     }
 }

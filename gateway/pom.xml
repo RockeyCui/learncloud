@@ -34,6 +34,10 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.rockeycui.learn</groupId>
+            <artifactId>common</artifactId>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>

@@ -1,5 +1,6 @@
 package com.rockeycui.learn.backend.serviceimpl;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.rockeycui.learn.backend.service.BackendService;
 import com.rockeycui.learn.common.bean.ResultInfo;
 import com.rockeycui.learn.usercenter.api.fegin.UserFeignService;
@@ -20,6 +21,7 @@ public class BackendServiceImpl implements BackendService {
 
 
     @Override
+    @HystrixCommand
     public ResultInfo sayHi() {
         log.info("------------say-----------");
         return userFeignService.hi();

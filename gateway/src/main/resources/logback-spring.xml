@@ -6,7 +6,7 @@
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
     <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
     <!-- The FILE and ASYNC appenders are here as examples for a production configuration -->
-    <property name="PROJ_NAME" value="usercenter"/>
+    <property name="PROJ_NAME" value="gateway"/>
     <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
     <property name="LOG_HOME" value="/data/logs/${PROJ_NAME}/"/>
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -16,7 +16,7 @@
             <maxHistory>30</maxHistory>
         </rollingPolicy>
         <encoder>
-            <charset>utf-8</charset>
+            <charset>UTF-8</charset>
             <Pattern>%blue(%d) %highlight(%-5level) [%thread] [%X{log-track-id}] %cyan(%logger): %msg%n</Pattern>
         </encoder>
     </appender>
