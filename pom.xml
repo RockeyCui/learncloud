@@ -23,6 +23,8 @@
         <module>confsvr</module>
         <module>usercenter-parent/usercenter</module>
         <module>usercenter-parent/usercenter-api</module>
+        <module>wechat-parent/wechat</module>
+        <module>wechat-parent/wechat-api</module>
     </modules>
 
 
@@ -52,6 +54,11 @@
             <dependency>
                 <groupId>com.rockeycui.learn</groupId>
                 <artifactId>usercenter-api</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.rockeycui.learn</groupId>
+                <artifactId>wechat-api</artifactId>
                 <version>1.0.0</version>
             </dependency>
 

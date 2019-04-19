@@ -10,21 +10,36 @@ import java.io.Serializable;
  */
 @Data
 public class ResultInfo<T> implements Serializable {
-    private int errno;
-    private String errmsg;
+    private int errNo;
+    private String errMsg;
     private T data;
 
     public ResultInfo() {
-        this.errno = 0;
+        this.errNo = 0;
         data = null;
     }
 
-    public ResultInfo(int errno, T data) {
-        this.errno = errno;
+    public ResultInfo(T data) {
+        this.errNo = 0;
         this.data = data;
-        if (errno != 0) {
-            this.errmsg = data.toString();
+    }
+
+    public ResultInfo(int errNo, T data) {
+        this.errNo = errNo;
+        this.data = data;
+        if (errNo != 0) {
+            this.errMsg = data.toString();
         }
+    }
+
+    public void fail(String errorMsg) {
+        errNo = 99;
+        this.errMsg = errorMsg;
+    }
+
+    public void fail(int errNo, String errMsg) {
+        this.errNo = errNo;
+        this.errMsg = errMsg;
     }
 
     /**
@@ -35,7 +50,7 @@ public class ResultInfo<T> implements Serializable {
      * @date 2018/9/4
      */
     public boolean judgeIsSuccess() {
-        return this.errno == 0;
+        return this.errNo == 0;
     }
 
 }

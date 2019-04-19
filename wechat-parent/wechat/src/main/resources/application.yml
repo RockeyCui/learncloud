@@ -1,0 +1,48 @@
+server:
+  port: 9082
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://39.107.224.153:3306/kangkang?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8&useSSL=false&zeroDateTimeBehavior=convertToNull
+      username: root
+      password: wodeai1993
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      initial-size: 5
+      min-idle: 1
+      max-active: 20
+      max-wait: 60000
+      max-open-prepared-statements: -1
+      validation-query-timeout: 60000
+      time-between-eviction-runs-millis: 36000
+      test-while-idle: true
+      validation-query: SELECT NOW()
+      test-on-borrow: false
+      pool-prepared-statements: false
+      test-on-return: false
+
+mybatis:
+  config-location: classpath:mybatis.xml
+  mapper-locations: classpath:mapper/*.xml
+
+wechat:
+  app-id: wx0cfda80e17fde36b
+  app-secret: 9c2afad44094c0ca56054a4d5f64b061
+  app-token: liudancuishilei1873
+  access-token-grant-type: client_credential
+  access-token-url: https://api.weixin.qq.com/cgi-bin/token?grant_type=${wechat.access-token-grant-type}&appid=${wechat.app-id}&secret=${wechat.app-secret}
+  create-menu-url: https://api.weixin.qq.com/cgi-bin/menu/create?access_token=
+  get-menu-url: https://api.weixin.qq.com/cgi-bin/menu/get?access_token=
+  oauth2-token-url: https://api.weixin.qq.com/sns/oauth2/access_token?appid=${wechat.app-id}&secret=${wechat.app-secret}&code=CODE&grant_type=authorization_code
+  oauth2-user-info-url: https://api.weixin.qq.com/sns/userinfo?access_token={0}&openid={1}&lang=zh_CN
+  send-msg-url: https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=
+  custom:
+    bind-info-url: https://cuishilei.com/liudan/bind.html?oid=
+    bind-info-pic: https://cuishilei.com/liudan/bind.jpg
