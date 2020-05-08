@@ -5,6 +5,4 @@ spring:
     active: default
   cloud:
     config:
-      uri: http://39.107.224.153:8081
-encrypt:
-  key: IMSYMMETRIC
+      uri: http://localhost:8081

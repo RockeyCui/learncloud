@@ -7,5 +7,5 @@ import com.rockeycui.learn.common.bean.ResultInfo;
  * @date 2018/12/20
  */
 public interface UserService {
-    ResultInfo sayHi();
+    ResultInfo<?> sayHi();
 }

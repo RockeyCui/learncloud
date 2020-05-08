@@ -5,7 +5,7 @@ import com.rockeycui.learn.common.util.DateTimeUtil;
 import com.rockeycui.learn.wechat.api.dto.req.WxReplyMsg;
 import com.rockeycui.learn.wechat.api.dto.req.WxReq;
 import com.rockeycui.learn.wechat.service.WxUserService;
-import com.rockeycui.learn.wechat.util.WxReplyTools;
+import com.rockeycui.learn.wechat.util.WxReplyUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -34,7 +34,7 @@ public class WxUserServiceImpl implements WxUserService {
         replyMsg.setUrl(bindInfoUrl + req.getFromUserName());
         replyMsg.setPicUrl(bindInfoPic);
         list.add(replyMsg);
-        return WxReplyTools.getReplyNewsMsgXml(req, list);
+        return WxReplyUtil.getReplyNewsMsgXml(req, list);
     }
 
     @Override
@@ -46,7 +46,7 @@ public class WxUserServiceImpl implements WxUserService {
         replyMsg.setUrl("");
         replyMsg.setPicUrl("");
         list.add(replyMsg);
-        return WxReplyTools.getReplyNewsMsgXml(req, list);
+        return WxReplyUtil.getReplyNewsMsgXml(req, list);
     }
 
     @Override
@@ -61,6 +61,6 @@ public class WxUserServiceImpl implements WxUserService {
                 "2.本订阅号现阶段只用于培训学员签到\n" +
                 "3.回复【绑定】，绑定你的学员信息吧\n";
         reply.setContent(sb);
-        return WxReplyTools.getReplyTextMsgXml(reply);
+        return WxReplyUtil.getReplyTextMsgXml(reply);
     }
 }

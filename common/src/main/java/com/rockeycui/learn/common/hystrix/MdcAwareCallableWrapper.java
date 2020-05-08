@@ -1,8 +1,7 @@
-package com.rockeycui.learn.backend.config.hystrix;
+package com.rockeycui.learn.common.hystrix;
 
 
 import org.slf4j.MDC;
-import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +11,6 @@ import java.util.concurrent.Callable;
  * @author cuishilei
  * @date 2019/3/7
  */
-@Component
 public class MdcAwareCallableWrapper implements HystrixCallableWrapper {
 
     @Override

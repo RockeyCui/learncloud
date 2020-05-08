@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @Slf4j
-public class WxReplyTools {
+public class WxReplyUtil {
 
 	/**
 	 * 微信 被动回复 文本消息

@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 
     @Override
-    public ResultInfo sayHi() {
+    public ResultInfo<?> sayHi() {
         log.info("------------say-----------");
         ResultInfo<String> resultInfo = new ResultInfo<>();
         resultInfo.setData("hi");

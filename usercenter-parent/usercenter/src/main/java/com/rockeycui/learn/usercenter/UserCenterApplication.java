@@ -10,11 +10,11 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  */
 @EnableFeignClients
 @EnableEurekaClient
-@SpringBootApplication
-public class UsercenterApplication {
+@SpringBootApplication(scanBasePackages = {"com.rockeycui.learn"})
+public class UserCenterApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(UsercenterApplication.class, args);
+        SpringApplication.run(UserCenterApplication.class, args);
     }
 
 }

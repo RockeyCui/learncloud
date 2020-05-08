@@ -1,4 +1,4 @@
-package com.rockeycui.learn.backend.config;
+package com.rockeycui.learn.common.bean;
 
 import lombok.Data;
 

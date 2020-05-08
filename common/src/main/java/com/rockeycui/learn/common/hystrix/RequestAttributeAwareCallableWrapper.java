@@ -1,6 +1,5 @@
-package com.rockeycui.learn.backend.config.hystrix;
+package com.rockeycui.learn.common.hystrix;
 
-import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 
@@ -10,7 +9,6 @@ import java.util.concurrent.Callable;
  * @author cuishilei
  * @date 2019/3/7
  */
-@Component
 public class RequestAttributeAwareCallableWrapper implements HystrixCallableWrapper {
 
     @Override

@@ -1,4 +1,4 @@
-package com.rockeycui.learn.backend.config.hystrix;
+package com.rockeycui.learn.common.hystrix;
 
 import java.util.concurrent.Callable;
 
