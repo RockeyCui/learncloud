@@ -5,7 +5,7 @@
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
     <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
     <!-- The FILE and ASYNC appenders are here as examples for a production configuration -->
-    <property name="APP_NAME" value="backend"/>
+    <property name="APP_NAME" value="boot"/>
     <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
     <property name="LOG_HOME" value="/data/logs/${APP_NAME}/"/>
     <contextName>${APP_NAME}</contextName>

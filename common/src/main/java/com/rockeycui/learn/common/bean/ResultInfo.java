@@ -24,33 +24,8 @@ public class ResultInfo<T> implements Serializable {
         this.data = data;
     }
 
-    public ResultInfo(int errNo, T data) {
-        this.errNo = errNo;
-        this.data = data;
-        if (errNo != 0) {
-            this.errMsg = data.toString();
-        }
-    }
-
-    public void fail(String errorMsg) {
-        errNo = 99;
-        this.errMsg = errorMsg;
-    }
-
-    public void fail(int errNo, String errMsg) {
+    public ResultInfo(int errNo, String errMsg) {
         this.errNo = errNo;
         this.errMsg = errMsg;
     }
-
-    /**
-     * 判断是否成功方法
-     *
-     * @return boolean
-     * @author cuishilei
-     * @date 2018/9/4
-     */
-    public boolean judgeIsSuccess() {
-        return this.errNo == 0;
-    }
-
 }

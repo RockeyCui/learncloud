@@ -115,7 +115,7 @@ public class WxServiceImpl implements WxService {
         JSONObject result = JSONObject.parseObject(res);
         log.info("微信返回数据：" + result.toString());
         if (!result.getInteger("errcode").equals(0)) {
-            resultInfo.fail(result.getString("errMsg"));
+            resultInfo = new ResultInfo(111, result.getString("errMsg"));
         }
         return resultInfo;
     }

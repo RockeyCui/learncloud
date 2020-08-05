@@ -1,0 +1,36 @@
+server:
+  port: 8088
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://39.97.171.225:3306/learn?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8&useSSL=false&zeroDateTimeBehavior=convertToNull
+      username: root
+      password: Wodeai1993.
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      initial-size: 5
+      min-idle: 1
+      max-active: 20
+      max-wait: 60000
+      max-open-prepared-statements: -1
+      validation-query-timeout: 60000
+      time-between-eviction-runs-millis: 36000
+      test-while-idle: true
+      validation-query: SELECT NOW()
+      test-on-borrow: false
+      pool-prepared-statements: false
+      test-on-return: false
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+wechat:
+  mini:
+    app-id: wx3a442be571808ce3
+    app-secret: 5a448cdf868649a2ef6f1b3b322d12f6
+    access-token-url: https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=${wechat.mini.app-id}&secret=${wechat.mini.app-secret}
+wx:
+  miniapp:
+    appid: wx3a442be571808ce3
+    secret: 5a448cdf868649a2ef6f1b3b322d12f6
+    token:

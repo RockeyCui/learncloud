@@ -25,6 +25,7 @@
         <module>usercenter-parent/usercenter-api</module>
         <module>wechat-parent/wechat</module>
         <module>wechat-parent/wechat-api</module>
+        <module>boot</module>
     </modules>
 
 
